@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://kit.fontawesome.com/aec6e02aa5.js" crossorigin="anonymous"></script>
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/"class="logo">BeltoM</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="mailto:belongtomars@gmail.com" target="_blank" ><i class="fab fa-google"></i></a></li>
+                    <li><a href="https://github.com/Belt0M" target="_blank" ><i class="fab fa-github"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+                <div class="s s1">
+                    <div class="container">
+                        <h1>Frontender</br> <span>(HTML, CSS, JS, React)</span> </h1>
+                        <a href="#about">About me</a>
+                    </div>
+                </div>
+            
+            
+                <div class="s s2" id="about">
+                    <div class="container"> 
+                        <div class="text-wrapper">
+                            <h1>About</h1>
+                            <h3>Frontender</h3>
+                            <span>Hey, I'm Beltom, an accomplished web developer who's ready to jump right into your project and provide you with a beautifully designed pixel-by-pixel website with a responsive design (even for a smartwatch :D ). I have two years of developing experience (including React). Always open to suggestions and requests. Press the contact button and have a nice day</span>
+                        </div>
+                    </div>
+                </div>
+            
+            
+                <div class="s s3">
+                    <div class="container">
+                        <div class="text-wrapper">
+                            <h3>Projects</h3>
+                            <h1>Let's see that</h1>
+                            <div class="anchor" id="projects"></div>
+                        </div>
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide slide slide1">
+                                <div class="text-container">
+                                    <h6 class="hover-up">August 2021</h6>
+                                    <h1 class="hover-up">Noir Barbershop</h1>
+                                    <span class="desc">The official website of Noir Barbershop - A project for a French network of services</span>
+                                    <a href="#" class="hover-down">Website</a>
+                                    <div class="underline hover-down"></div>
+                                </div>
+                              </div>
+                              <div class="swiper-slide slide slide2">
+                                <div class="text-container">
+                                    <h6 class="hover-up">August 2021</h6>
+                                    <h1 class="hover-up">Noir Barbershop</h1>
+                                    <span class="desc">The official website of Noir Barbershop - A project for a French network of services</span>
+                                    <a href="#" class="hover-down">Website</a>
+                                    <div class="underline hover-down"></div>
+                                </div>
+                              </div>
+                              <div class="swiper-slide slide slide3">
+                                <div class="text-container">
+                                    <h6 class="hover-up">August 2021</h6>
+                                    <h1 class="hover-up">Noir Barbershop</h1>
+                                    <span class="desc">The official website of Noir Barbershop - A project for a French network of services</span>
+                                    <a href="#" class="hover-down">Website</a>
+                                    <div class="underline hover-down"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="slider-prev slider-nav"><i class="fa fa-long-arrow-left"></i></div>
+                            <div class="slider-next slider-nav"><i class="fa fa-long-arrow-right"></i></div>
+                          </div>
+                    </div>
+                </div>
+            
+            
+                <div class="s s4" id="contact">
+                    <div class="container">
+                        <div class="text-wrapper">
+                            <h1>Contact</h1>
+                            <h3>Got a problem to solve?</h3>
+                            <span>Get your space suit ready and tell me your ideas to develop your dream application.</span>
+                        </div>
+                        <div class="content-container">
+                            <form method="post" action="php/contact.php">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" class="name" maxlength="30">
+                                <label for="name">Email</label>
+                                <input type="email" id="email" name="email" class="email" maxlength="30">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" class="message" cols="30" rows="10" maxlength="500"></textarea>
+                                <button type="submit" class="submit" id="submit">Hit me up <i class="fas fa-envelope-open-text"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

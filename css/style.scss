@@ -1,0 +1,598 @@
+$menu: rgb(78, 8, 163);
+$menu2: rgb(169, 148, 178);
+$menu3: rgb(97, 0, 149);
+$menu4: rgb(3, 0, 21);;
+$slide1: rgb(78, 8, 163);
+$slide2: rgb(3, 0, 21);
+$slide3: rgb(222, 222, 222);
+$slide4: rgb(3, 0, 21);
+$textWhite: #efefef;
+$buttonWhite: #efefef;
+$buttonDark: rgb(3, 0, 21);
+$textPurple: #6919FF;
+$textBlack: rgb(12, 12, 12);
+$textGrey: rgb(168, 168, 168);
+$menuHover: #fff;
+$slideText1: #fff;
+$input: rgb(21, 12, 33);
+$font: monospace;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+    background: $slide1;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    width: 100%;
+    height: 10vh;
+    background: $menu;
+
+    &.active {
+        background: $menu4;
+    }
+
+    &.active2 {
+        background: $menu2;
+    }
+
+    &.active3 {
+        background: $menu3;
+    }
+
+    .container {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            position: relative;
+            color: $textWhite;
+            font-size: 1vw;
+            text-transform: uppercase;
+            letter-spacing: .1vw;
+            left: .5%;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav {
+            width: 34%;
+            height: 100%;
+
+            ul {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 4;
+
+                &::before {
+                    content: " ";
+                    position: absolute;
+                    width: 30%;
+                    height: 35%;
+                    left: 60%;
+                    background: $menu;
+                    opacity: 0;
+                    animation: menu 2.2s ease-out;
+                    z-index: 0;
+                }
+
+                @keyframes menu {
+                    0% {
+                        left: 60%;
+                        opacity: 1;
+                        z-index: 5;
+                    }
+
+                    99% {
+                        opacity: 1;
+                        z-index: 5;
+                    }
+
+                    100% {
+                        opacity: 0;
+                        left: 90%;
+                        z-index: 0;
+                    }
+                }
+
+                li {
+                    list-style: none;
+                    text-align: center;
+                    padding: 0 1.5vw;
+                    transition: .3s ease;
+                    z-index: 2;
+
+                    a {
+                        text-decoration: none;
+                        color: $textWhite;
+                        text-transform: uppercase;
+                        font-size: 1vw;
+                        font-weight: 600;
+                        letter-spacing: .05vw;
+                        transition: .1s ease;
+
+                        i {
+                            font-size: 1.2vw;
+                        }
+
+                        &:hover {
+                            color: $menuHover;
+                        }
+                    }
+                }
+
+                li:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+.s {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 100vh;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 80%;
+
+        .content-container {
+            width: 55%;
+            height: 80%;
+            background: rgb(21, 12, 33);
+            margin: 0 0 0 15%;
+        }
+
+        .text-wrapper {
+            width: 45%;
+            height: 70%;
+            background: rgb(213, 213, 213);
+        }
+    }
+}
+
+.s1 {
+
+    background: $slide1;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+
+
+    .container {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        text-align: center;
+
+        h1 {
+
+            width: 100%;
+            height: 50vh;
+            padding: 2% 0 0 0;
+            font-size: 7vw;
+            font-weight: 600;
+            color: $slideText1;
+            text-shadow: .2vw .3vw .1vw rgb(173, 174, 255);
+            animation: bounce2 2s ease;
+
+            span {
+                font-size: 6vw;
+            }
+        }
+
+        @keyframes bounce2 {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-30px);
+            }
+
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        a {
+            width: 12%;
+            height: 7vh;
+            border: .2vw solid #fff;
+            border-radius: .1vw;
+            text-decoration: none;
+            color: $slideText1;
+            font-size: 1.5vw;
+            position: relative;
+            top: 5%;
+            text-shadow: .1vw .1vw .1vw rgb(173, 174, 255);
+            line-height: 6.3vh;
+            transition: .5s ease;
+            opacity: 1;
+            transform: scale(1);
+            animation-duration: 2s;
+            animation-delay: 0;
+            animation-name: bounce-in;
+
+            &:hover {
+                background: #fff;
+                color: $slide1;
+                font-weight: 600;
+                text-shadow: 0 0 0;
+                box-shadow: 0 0 .3vw .2vw #fff;
+            }
+        }
+
+        @keyframes bounce-in {
+            0% {
+                opacity: 0;
+                transform: scale(.3);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(.9);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.s2 {
+    background: $slide2;
+
+    .container {
+        justify-content: flex-start;
+
+        .text-wrapper {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            background: none;
+            width: 45%;
+            height: 80%;
+            top: 0%;
+
+            h1 {
+                color: $textPurple;
+                font-size: 1.4vw;
+                text-transform: uppercase;
+            }
+
+            h3 {
+                color: $textWhite;
+                font-size: 2.8vw;
+                padding-top: 3%;
+            }
+
+            span {
+                color: $textGrey;
+                font-size: 1vw;
+                padding-top: 7%;
+            }
+        }
+    }
+}
+
+.s3 {
+    height: 128vh;
+
+    .container {
+        background: $textWhite;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .text-wrapper {
+            width: 100%;
+            height: 29.5%;
+            text-align: center;
+
+            h3 {
+                color: $textPurple;
+                font-size: 1.6vw;
+                padding-top: 13vh;
+                letter-spacing: .1vw;
+                text-transform: uppercase;
+            }
+
+            h1 {
+                color: $textBlack;
+                font-size: 2.8vw;
+                padding-top: 1.5vh;
+                font-weight: 100;
+            }
+
+            .anchor {
+                position: absolute;
+                top: 22%;
+                left: 49.5%;
+            }
+        }
+
+        .swiper {
+            width: 100%;
+            height: 70.5%;
+            background: rgb(222, 222, 222);
+
+            .slide {
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                background-size: 100%;
+                overflow: hidden;
+                cursor: pointer;
+                transition: .5s ease;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 5;
+                    background-size: 100% 100%;
+                }
+
+                .text-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 80%;
+                    height: 60%;
+                    color: $textWhite;
+                    z-index: 6;
+                    transition: .5s ease;
+
+                    h6,
+                    h1,
+                    span,
+                    a,
+                    .underline {
+                        position: relative;
+                        transition: .5s ease;
+                        top: 0%;
+                    }
+
+                    h6 {
+                        font-size: 1.1vw;
+                        font-weight: 100;
+                    }
+
+                    h1 {
+                        font-size: 2.8vw;
+                    }
+
+                    span {
+                        opacity: 0;
+                        top: 7vh;
+                        // transform: scaleY(0.1);
+                        transform-origin: bottom center;
+                        transition: .2s ease-in;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        margin-top: 3vh;
+                        color: $textWhite;
+                    }
+
+                    .underline {
+                        width: 100%;
+                        height: .01vh;
+                        background: $textWhite;
+                        margin-top: 2.5vh;
+                    }
+                }
+            }
+
+            .slide:hover {
+                background-size: 110%;
+            }
+
+            .slide:hover span {
+                opacity: 1;
+                top: 5vh;
+                // transform: scaleY(1);
+            }
+
+            .slide:hover .hover-up {
+                top: -14vh;
+            }
+
+            .slide:hover .hover-down {
+                top: 5vh;
+            }
+
+            .slide1 {
+                background: rgb(93, 57, 46) url(../img/website1.png) no-repeat center/cover;
+                background-size: 100%;
+
+                &::before {
+                    background-color: rgba(3, 3, 3, 0);
+                    background-image: linear-gradient(180deg, rgba(3, 3, 3, 0) 30%, rgba(97, 0, 149, 0.76) 100%);
+                }
+            }
+
+            .slider-nav {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: 41vh;
+                width: 3vw;
+                height: 3vw;
+                // border-radius: 50%;
+                cursor: pointer;
+                // background: rgba(205, 205, 205, 0.469);
+                z-index: 5;
+
+                i {
+                    color: #fff;
+                    font-size: 1.8vw;
+                    padding: 5% 5% 0 0;
+                }
+            }
+
+            .slider-prev {
+                left: 2.3%;
+            }
+
+            .slider-next {
+                right: 2.3%;
+
+                i {
+                    padding: 5% 0 0 5%;
+                }
+            }
+        }
+    }
+}
+
+.s4 {
+    background: $slide4;
+
+    .container {
+
+        .text-wrapper {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            width: 55%;
+            height: 80%;
+            top: -5%;
+            background: none;
+
+            h1 {
+                color: $textPurple;
+                font-size: 1.4vw;
+                text-transform: uppercase;
+            }
+
+            h3 {
+                color: $textWhite;
+                font-size: 2.8vw;
+                padding-top: 3%;
+            }
+
+            span {
+                color: $textGrey;
+                font-size: 1vw;
+                padding-top: 7%;
+            }
+        }
+
+        .content-container {
+            position: relative;
+            top: 3%;
+            background: none;
+
+            form {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-direction: column;
+
+                label {
+                    color: $textWhite;
+                    font-size: 1vw;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    letter-spacing: .05vw;
+                    margin-bottom: 1.5vh;
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+                    background: $input;
+                    border: none;
+                    border-radius: .3vw;
+                    margin-bottom: 6vh;
+                    color: $textWhite;
+                    padding: .3vw .3vw .3vw 1vw;
+                    font-size: 1.1vw;
+                }
+
+                input {
+                    height: 6vh;
+                }
+
+                textarea {
+                    height: 16vh;
+                }
+
+                button {
+                    background: $buttonWhite;
+                    padding: 1.5vh 1.5vw;
+                    border: .15vw solid $buttonWhite;
+                    color: $textBlack;
+                    cursor: pointer;
+                    transition: .5s ease;
+
+                    &:hover {
+                        background: $buttonDark;
+                        color: $textWhite;
+                    }
+
+                    i {
+                        position: relative;
+                        top: .1vh;
+                        left: .1vw;
+                        z-index: 5;
+                    }
+                }
+            }
+        }
+    }
+}
