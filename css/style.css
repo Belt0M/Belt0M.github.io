@@ -22,6 +22,9 @@ header {
   height: 10vh;
   background: rgb(78, 8, 163);
 }
+header.mobile {
+  background: rgb(78, 8, 163);
+}
 header.active {
   background: rgb(3, 0, 21);
 }
@@ -38,6 +41,63 @@ header .container {
   align-items: center;
   justify-content: space-between;
 }
+header .container.mobile {
+  display: none;
+}
+header .container.mobile .logo {
+  font-size: 2.2vw;
+  letter-spacing: 0.2vw;
+}
+header .container.mobile i {
+  font-size: 2.2vw;
+  color: #efefef;
+  cursor: pointer;
+}
+header .container.mobile nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgb(3, 0, 21);
+  transform: scale(100%);
+  transform-origin: 85% 5%;
+  z-index: 100;
+}
+header .container.mobile nav span {
+  position: absolute;
+  color: #efefef;
+  font-size: 5vw;
+  right: 3%;
+  top: 1%;
+  cursor: pointer;
+}
+header .container.mobile nav.active {
+  display: block;
+  -webkit-animation: menu-mobile 0.8s ease;
+          animation: menu-mobile 0.8s ease;
+}
+@-webkit-keyframes menu-mobile {
+  0% {
+    transform: scale(1%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+@keyframes menu-mobile {
+  0% {
+    transform: scale(1%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+header .container.mobile nav.active ul::before {
+  display: none;
+}
 header .container .logo {
   position: relative;
   color: #efefef;
@@ -47,6 +107,29 @@ header .container .logo {
   left: 0.5%;
   text-decoration: none;
   font-weight: 600;
+  opacity: 0;
+}
+header .container .logo.fadein {
+  -webkit-animation: fadeIn 0.9s;
+          animation: fadeIn 0.9s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 header .container nav {
   width: 34%;
@@ -72,44 +155,22 @@ header .container nav ul::before {
           animation: menu 2.2s ease-out;
   z-index: 0;
 }
-@-webkit-keyframes menu {
-  0% {
-    left: 60%;
-    opacity: 1;
-    z-index: 5;
-  }
-  99% {
-    opacity: 1;
-    z-index: 5;
-  }
-  100% {
-    opacity: 0;
-    left: 90%;
-    z-index: 0;
-  }
-}
-@keyframes menu {
-  0% {
-    left: 60%;
-    opacity: 1;
-    z-index: 5;
-  }
-  99% {
-    opacity: 1;
-    z-index: 5;
-  }
-  100% {
-    opacity: 0;
-    left: 90%;
-    z-index: 0;
-  }
-}
 header .container nav ul li {
   list-style: none;
   text-align: center;
   padding: 0 1.5vw;
   transition: 0.3s ease;
   z-index: 2;
+}
+header .container nav ul li.list-item {
+  transition: 2s all ease-in-out;
+  opacity: 0;
+}
+header .container nav ul li.fadein {
+  -webkit-animation: fadeIn 0.9s;
+          animation: fadeIn 0.9s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 header .container nav ul li a {
   text-decoration: none;
@@ -150,13 +211,15 @@ header .container nav ul li:hover {
 .s .container .content-container {
   width: 55%;
   height: 80%;
-  background: rgb(21, 12, 33);
   margin: 0 0 0 15%;
 }
 .s .container .text-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 45%;
   height: 70%;
-  background: rgb(213, 213, 213);
 }
 
 .s1 {
@@ -173,8 +236,6 @@ header .container nav ul li:hover {
 }
 .s1 .container h1 {
   width: 100%;
-  height: 50vh;
-  padding: 2% 0 0 0;
   font-size: 7vw;
   font-weight: 600;
   color: #fff;
@@ -208,17 +269,15 @@ header .container nav ul li:hover {
   }
 }
 .s1 .container a {
-  width: 12%;
-  height: 7vh;
   border: 0.2vw solid #fff;
   border-radius: 0.1vw;
   text-decoration: none;
   color: #fff;
   font-size: 1.5vw;
   position: relative;
-  top: 5%;
+  padding: 1.6vh 2.2vw;
+  margin-top: 7%;
   text-shadow: 0.1vw 0.1vw 0.1vw rgb(173, 174, 255);
-  line-height: 6.3vh;
   transition: 0.5s ease;
   opacity: 1;
   transform: scale(1);
@@ -306,9 +365,10 @@ header .container nav ul li:hover {
 
 .s3 {
   height: 128vh;
+  background: #ebdffd;
 }
 .s3 .container {
-  background: #efefef;
+  background: #ebdffd;
   width: 100%;
   height: 100%;
   display: flex;
@@ -324,7 +384,6 @@ header .container nav ul li:hover {
 .s3 .container .text-wrapper h3 {
   color: #6919FF;
   font-size: 1.6vw;
-  padding-top: 13vh;
   letter-spacing: 0.1vw;
   text-transform: uppercase;
 }
@@ -342,7 +401,7 @@ header .container nav ul li:hover {
 .s3 .container .swiper {
   width: 100%;
   height: 70.5%;
-  background: rgb(222, 222, 222);
+  background: #ebdffd;
 }
 .s3 .container .swiper .slide {
   display: flex;
@@ -364,6 +423,7 @@ header .container nav ul li:hover {
 .s3 .container .swiper .slide .text-container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
   width: 80%;
   height: 60%;
@@ -389,33 +449,39 @@ header .container nav ul li:hover {
 }
 .s3 .container .swiper .slide .text-container span {
   opacity: 0;
-  top: 7vh;
+  top: 10%;
   transform-origin: bottom center;
   transition: 0.2s ease-in;
+  font-size: 1vw;
 }
 .s3 .container .swiper .slide .text-container a {
   text-decoration: none;
-  margin-top: 3vh;
+  margin-top: 2%;
   color: #efefef;
+  font-size: 0.9vw;
+  font-weight: 600;
+}
+.s3 .container .swiper .slide .text-container a:hover {
+  transform: scale(1.1);
 }
 .s3 .container .swiper .slide .text-container .underline {
   width: 100%;
-  height: 0.01vh;
+  height: 0.1%;
   background: #efefef;
-  margin-top: 2.5vh;
+  margin-top: 1.5%;
 }
 .s3 .container .swiper .slide:hover {
   background-size: 110%;
 }
 .s3 .container .swiper .slide:hover span {
   opacity: 1;
-  top: 5vh;
+  top: 8%;
 }
 .s3 .container .swiper .slide:hover .hover-up {
-  top: -14vh;
+  top: -23%;
 }
 .s3 .container .swiper .slide:hover .hover-down {
-  top: 5vh;
+  top: 8%;
 }
 .s3 .container .swiper .slide1 {
   background: rgb(93, 57, 46) url(../img/website1.png) no-repeat center/cover;
@@ -430,7 +496,7 @@ header .container nav ul li:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 41vh;
+  top: 47%;
   width: 3vw;
   height: 3vw;
   cursor: pointer;
@@ -438,7 +504,7 @@ header .container nav ul li:hover {
 }
 .s3 .container .swiper .slider-nav i {
   color: #fff;
-  font-size: 1.8vw;
+  font-size: 2vw;
   padding: 5% 5% 0 0;
 }
 .s3 .container .swiper .slider-prev {
@@ -499,7 +565,7 @@ header .container nav ul li:hover {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.05vw;
-  margin-bottom: 1.5vh;
+  margin-bottom: 2.5%;
 }
 .s4 .container .content-container form input,
 .s4 .container .content-container form textarea {
@@ -507,24 +573,25 @@ header .container nav ul li:hover {
   background: rgb(21, 12, 33);
   border: none;
   border-radius: 0.3vw;
-  margin-bottom: 6vh;
+  margin-bottom: 10%;
   color: #efefef;
-  padding: 0.3vw 0.3vw 0.3vw 1vw;
+  padding: 2%;
   font-size: 1.1vw;
 }
 .s4 .container .content-container form input {
-  height: 6vh;
+  height: 12%;
 }
 .s4 .container .content-container form textarea {
-  height: 16vh;
+  height: 35%;
 }
 .s4 .container .content-container form button {
   background: #efefef;
-  padding: 1.5vh 1.5vw;
+  padding: 2% 4%;
   border: 0.15vw solid #efefef;
   color: rgb(12, 12, 12);
   cursor: pointer;
   transition: 0.5s ease;
+  font-size: 0.9vw;
 }
 .s4 .container .content-container form button:hover {
   background: rgb(3, 0, 21);

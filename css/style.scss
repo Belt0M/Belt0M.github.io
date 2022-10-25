@@ -2,9 +2,10 @@ $menu: rgb(78, 8, 163);
 $menu2: rgb(169, 148, 178);
 $menu3: rgb(97, 0, 149);
 $menu4: rgb(3, 0, 21);;
+$menuMobile: rgb(78, 8, 163);
 $slide1: rgb(78, 8, 163);
 $slide2: rgb(3, 0, 21);
-$slide3: rgb(222, 222, 222);
+$slide3: #ebdffd;
 $slide4: rgb(3, 0, 21);
 $textWhite: #efefef;
 $buttonWhite: #efefef;
@@ -41,6 +42,10 @@ header {
     height: 10vh;
     background: $menu;
 
+    &.mobile {
+        background: $menuMobile;
+    }
+
     &.active {
         background: $menu4;
     }
@@ -60,6 +65,62 @@ header {
         align-items: center;
         justify-content: space-between;
 
+        &.mobile {
+            display: none;
+
+            .logo {
+                font-size: 2.2vw;
+                letter-spacing: .2vw;
+            }
+
+            i {
+                font-size: 2.2vw;
+                color: $textWhite;
+                cursor: pointer;
+            }
+            nav {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%; 
+                background-color: $slide4;
+                transform: scale(100%);
+                transform-origin: 85% 5%;
+                z-index: 100;
+
+                span {
+                    position: absolute;
+                    color: $textWhite;
+                    font-size: 5vw;
+                    right: 3%;
+                    top: 1%;
+                    cursor: pointer;
+                }
+            }
+            nav.active {
+                display: block;
+                animation: menu-mobile .8s ease;
+
+                @keyframes menu-mobile {
+                    0% {
+                        transform: scale(1%);
+                    }
+                    100% {
+                        transform: scale(100%);
+                    }
+                }
+
+                ul {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+
         .logo {
             position: relative;
             color: $textWhite;
@@ -69,6 +130,21 @@ header {
             left: .5%;
             text-decoration: none;
             font-weight: 600;
+            opacity: 0;
+
+            &.fadein {
+                animation: fadeIn 0.9s;
+                animation-fill-mode: forwards;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         nav {
@@ -95,31 +171,22 @@ header {
                     z-index: 0;
                 }
 
-                @keyframes menu {
-                    0% {
-                        left: 60%;
-                        opacity: 1;
-                        z-index: 5;
-                    }
-
-                    99% {
-                        opacity: 1;
-                        z-index: 5;
-                    }
-
-                    100% {
-                        opacity: 0;
-                        left: 90%;
-                        z-index: 0;
-                    }
-                }
-
                 li {
                     list-style: none;
                     text-align: center;
                     padding: 0 1.5vw;
                     transition: .3s ease;
                     z-index: 2;
+
+                    &.list-item {
+                        transition: 2s all ease-in-out;
+                        opacity: 0;
+                    }
+                    
+                    &.fadein {
+                        animation: fadeIn 0.9s;
+                        animation-fill-mode: forwards;
+                    }
 
                     a {
                         text-decoration: none;
@@ -168,14 +235,16 @@ header {
         .content-container {
             width: 55%;
             height: 80%;
-            background: rgb(21, 12, 33);
             margin: 0 0 0 15%;
         }
 
         .text-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
             width: 45%;
             height: 70%;
-            background: rgb(213, 213, 213);
         }
     }
 }
@@ -197,8 +266,6 @@ header {
         h1 {
 
             width: 100%;
-            height: 50vh;
-            padding: 2% 0 0 0;
             font-size: 7vw;
             font-weight: 600;
             color: $slideText1;
@@ -230,17 +297,15 @@ header {
         }
 
         a {
-            width: 12%;
-            height: 7vh;
             border: .2vw solid #fff;
             border-radius: .1vw;
             text-decoration: none;
             color: $slideText1;
             font-size: 1.5vw;
             position: relative;
-            top: 5%;
+            padding: 1.6vh 2.2vw;
+            margin-top: 7%;
             text-shadow: .1vw .1vw .1vw rgb(173, 174, 255);
-            line-height: 6.3vh;
             transition: .5s ease;
             opacity: 1;
             transform: scale(1);
@@ -320,9 +385,10 @@ header {
 
 .s3 {
     height: 128vh;
+    background: $slide3;
 
     .container {
-        background: $textWhite;
+        background: $slide3;
         width: 100%;
         height: 100%;
         display: flex;
@@ -338,7 +404,6 @@ header {
             h3 {
                 color: $textPurple;
                 font-size: 1.6vw;
-                padding-top: 13vh;
                 letter-spacing: .1vw;
                 text-transform: uppercase;
             }
@@ -360,7 +425,7 @@ header {
         .swiper {
             width: 100%;
             height: 70.5%;
-            background: rgb(222, 222, 222);
+            background: $slide3;
 
             .slide {
                 display: flex;
@@ -383,6 +448,7 @@ header {
                 .text-container {
                     display: flex;
                     flex-direction: column;
+                    align-items: flex-start;
                     justify-content: center;
                     width: 80%;
                     height: 60%;
@@ -411,23 +477,30 @@ header {
 
                     span {
                         opacity: 0;
-                        top: 7vh;
+                        top: 10%;
                         // transform: scaleY(0.1);
                         transform-origin: bottom center;
                         transition: .2s ease-in;
+                        font-size: 1vw;
                     }
 
                     a {
                         text-decoration: none;
-                        margin-top: 3vh;
+                        margin-top: 2%;
                         color: $textWhite;
+                        font-size: .9vw;
+                        font-weight: 600;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
                     }
 
                     .underline {
                         width: 100%;
-                        height: .01vh;
+                        height: .1%;
                         background: $textWhite;
-                        margin-top: 2.5vh;
+                        margin-top: 1.5%;
                     }
                 }
             }
@@ -438,16 +511,16 @@ header {
 
             .slide:hover span {
                 opacity: 1;
-                top: 5vh;
+                top: 8%;
                 // transform: scaleY(1);
             }
 
             .slide:hover .hover-up {
-                top: -14vh;
+                top: -23%;
             }
 
             .slide:hover .hover-down {
-                top: 5vh;
+                top: 8%;
             }
 
             .slide1 {
@@ -465,7 +538,7 @@ header {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                top: 41vh;
+                top: 47%;
                 width: 3vw;
                 height: 3vw;
                 // border-radius: 50%;
@@ -475,7 +548,7 @@ header {
 
                 i {
                     color: #fff;
-                    font-size: 1.8vw;
+                    font-size: 2vw;
                     padding: 5% 5% 0 0;
                 }
             }
@@ -549,7 +622,7 @@ header {
                     text-transform: uppercase;
                     font-weight: 600;
                     letter-spacing: .05vw;
-                    margin-bottom: 1.5vh;
+                    margin-bottom: 2.5%;
                 }
 
                 input,
@@ -558,27 +631,28 @@ header {
                     background: $input;
                     border: none;
                     border-radius: .3vw;
-                    margin-bottom: 6vh;
+                    margin-bottom: 10%;
                     color: $textWhite;
-                    padding: .3vw .3vw .3vw 1vw;
+                    padding: 2%;
                     font-size: 1.1vw;
                 }
 
                 input {
-                    height: 6vh;
+                    height: 12%;
                 }
 
                 textarea {
-                    height: 16vh;
+                    height: 35%;
                 }
 
                 button {
                     background: $buttonWhite;
-                    padding: 1.5vh 1.5vw;
+                    padding: 2% 4%;
                     border: .15vw solid $buttonWhite;
                     color: $textBlack;
                     cursor: pointer;
                     transition: .5s ease;
+                    font-size: .9vw;
 
                     &:hover {
                         background: $buttonDark;

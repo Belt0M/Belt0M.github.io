@@ -1,0 +1,353 @@
+/* - - - Media - - - */
+@media screen and (max-width: 1240px) {
+    .s3 {
+        height: 110vh;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .s3 {
+        height: 100vh;
+    }
+    .s4 {
+        .container {
+            .content-container {
+                form {
+                    label {
+                        font-size: 1.4vw;
+                    }
+                    input {
+                        height: 10%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .s3 {
+        height: 90vh;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    header {
+        height: 10vh;
+
+        .container {
+            &.dekstop {
+                display: none;
+            }
+
+            &.mobile {
+                display: flex;
+
+                nav {
+                    ul {
+
+                        li {
+                            a {
+                                font-size: 2vw;
+
+                                i {
+                                    font-size: 2.4vw;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .s2, .s4 {
+        .container {
+            .text-wrapper {
+                h1 {
+                    font-size: 2.4vw;
+                }
+                h3 {
+                    font-size: 3.8vw;
+                }
+                span {
+                    font-size: 1.4vw;
+                }
+            }
+        }
+    }
+    .s3 {
+        height: 80vh;
+    }
+    .s4 {
+        .container {
+            .content-container {
+                form {
+                    input, textarea {
+                        font-size: 1.5vw;
+                    }
+                    label {
+                        font-size: 1.4vw;
+                    }
+                    input {
+                        height: 8%;
+                    }
+                    textarea {
+                        height: 22%;
+                    }
+                    button {
+                        padding: 3%;
+                        font-size: 1.4vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .s3 {
+        height: 70vh;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .s1 {
+        .container {
+            a {
+                padding: 2vh 3vw;
+                border: .3vw solid #fff;
+                font-size: 2.2vw;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .s3 {
+        height: 60vh;
+    }
+    .s4 {
+        .container {
+            .content-container {
+                form {
+                    input, textarea {
+                        font-size: 1.7vw;
+                    }
+                    label {
+                        font-size: 1.6vw;
+                    }
+                    input {
+                        height: 6%;
+                    }
+                    textarea {
+                        height: 18%;
+                    }
+                    button {
+                        padding: 3%;
+                        font-size: 1.6vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        .container {
+            &.mobile {
+
+                .logo {
+                    font-size: 2.8vw;
+                }
+
+                i {
+                    font-size: 2.8vw;
+                }
+
+            }
+        }
+    }
+
+    .s1 {
+        .container {
+            a {
+                padding: 1.6vh 2.6vw;
+                border: .3vw solid #fff;
+                font-size: 2.2vw;
+            }
+        }
+    }
+    .s2, .s4 {
+        .container {
+            .text-wrapper {
+                h1 {
+                    font-size: 2.8vw;
+                }
+                h3 {
+                    font-size: 4.2vw;
+                }
+                span {
+                    font-size: 1.6vw;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .s {
+        height: 50vh;
+    }
+
+    .s2,
+    .s3,
+    .s4 {
+        top: 50vh;
+    }
+
+    .s3 {
+        height: 50vh;
+    }
+
+    .s1 {
+        .container {
+
+            h1 {
+                font-size: 5vw;
+
+                span {
+                    font-size: 4vw;
+                }
+            }
+
+            a {
+                padding: 1vh 1.5vw;
+                border: .3vw solid #fff;
+                font-size: 1.8vw;
+            }
+        }
+    }
+    .s4 {
+        .container {
+            .content-container {
+                form {
+                    input, textarea {
+                        font-size: 1.7vw;
+                    }
+                    label {
+                        font-size: 1.6vw;
+                    }
+                    input {
+                        height: 10%;
+                    }
+                    textarea {
+                        height: 26%;
+                    }
+                    button {
+                        padding: 3%;
+                        font-size: 1.6vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .s1 {
+        .container {
+            a {
+                padding: 1vh 2vw;
+                border: .4vw solid #fff;
+                font-size: 2.1vw;
+            }
+        }
+    }
+
+    .s3 {
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    header {
+        .container {
+            &.mobile {
+
+                .logo {
+                    font-size: 3.2vw;
+                }
+
+                i {
+                    font-size: 3.2vw;
+                }
+
+            }
+        }
+    }
+
+    .s1 {
+        .container {
+
+            h1 {
+                font-size: 6vw;
+                span {
+                    font-size: 5vw;
+                }
+            }
+
+            a {
+                padding: .9vh 2.5vw;
+                border: .5vw solid #fff;
+                font-size: 2vw;
+            }
+
+        }
+    }
+
+    .s3 {
+        height: 36vh;
+    }
+    .s4 {
+        .container {
+            .content-container {
+                form {
+                    input, textarea {
+                        font-size: 1.9vw;
+                    }
+                    label {
+                        font-size: 1.8vw;
+                    }
+                    input {
+                        height: 8%;
+                    }
+                    textarea {
+                        height: 22%;
+                    }
+                    button {
+                        padding: 3.5%;
+                        font-size: 1.8vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .s3 {
+        height: 30vh;
+    }
+}
+
+
+@media screen and (max-width: 285px) {
+    .s3 {
+        height: 25vh;
+    }
+}
